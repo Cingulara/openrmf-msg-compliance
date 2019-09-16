@@ -13,7 +13,7 @@
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "env": {
-                "natsserverurl": "nats://127.0.0.1:4222"
+                "NATSSERVERURL": "nats://127.0.0.1:4222"
             },
         },
         {

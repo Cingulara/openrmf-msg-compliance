@@ -25,7 +25,7 @@ namespace openrmf_msg_compliance
             ConnectionFactory cf = new ConnectionFactory();
 
             // Creates a live connection to the default NATS Server running locally
-            IConnection c = cf.CreateConnection(Environment.GetEnvironmentVariable("natsserverurl"));
+            IConnection c = cf.CreateConnection(Environment.GetEnvironmentVariable("NATSSERVERURL"));
 
             EventHandler<MsgHandlerEventArgs> getCCIListing = (sender, natsargs) =>
             {
