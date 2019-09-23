@@ -25,16 +25,34 @@ namespace openrmf_msg_compliance
             ConnectionFactory cf = new ConnectionFactory();
 
             // Creates a live connection to the default NATS Server running locally
-            IConnection c = cf.CreateConnection(Environment.GetEnvironmentVariable("natsserverurl"));
+            IConnection c = cf.CreateConnection(Environment.GetEnvironmentVariable("NATSSERVERURL"));
 
-            // send back a full listing of CCI items based on the filter passed in
             EventHandler<MsgHandlerEventArgs> getCCIListing = (sender, natsargs) =>
             {
                 try {
                     // print the message
                     logger.Info("New NATS subject: {0}", natsargs.Message.Subject);
                     logger.Info("New NATS data: {0}",Encoding.UTF8.GetString(natsargs.Message.Data));
-                    string control = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(natsargs.Message.Data)).ToString();
+                    string msg = JsonConvert.SerializeObject(cciItems);
+                    // publish back out on the reply line to the calling publisher
+                    logger.Info("Sending back compressed CCI listing Data for the Compliance API");
+                    c.Publish(natsargs.Message.Reply, Encoding.UTF8.GetBytes(Compression.CompressString(msg)));
+                    c.Flush(); // flush the line
+                }
+                catch (Exception ex) {
+                    // log it here
+                    logger.Error(ex, "Error retrieving CCI full listing for the Compliance API");
+                }
+            };
+
+            // send back a full listing of CCI items based on the control passed in
+            EventHandler<MsgHandlerEventArgs> getCCIListingbyControl = (sender, natsargs) =>
+            {
+                try {
+                    // print the message
+                    logger.Info("New NATS subject: {0}", natsargs.Message.Subject);
+                    logger.Info("New NATS data: {0}",Encoding.UTF8.GetString(natsargs.Message.Data));
+                    string control = Encoding.UTF8.GetString(natsargs.Message.Data);
                     string msg = "";
                     if (!string.IsNullOrEmpty(control)) {
                         // with the full listing, to get the filtered list based on this control
@@ -49,15 +67,17 @@ namespace openrmf_msg_compliance
                 }
                 catch (Exception ex) {
                     // log it here
-                    logger.Error(ex, "Error retrieving checklist record for artifactId {0}", Encoding.UTF8.GetString(natsargs.Message.Data));
+                    logger.Error(ex, "Error getting the CCI listing for the Read API on control {0}", Encoding.UTF8.GetString(natsargs.Message.Data));
                 }
             };
             
             // The simple way to create an asynchronous subscriber
             // is to simply pass the event in.  Messages will start
             // arriving immediately.
-            logger.Info("setting up the openRMF compliance by CCI subscription by filter");
-            IAsyncSubscription asyncNew = c.SubscribeAsync("openrmf.compliance.cci", getCCIListing);
+            logger.Info("setting up the openRMF compliance CCI Listing subscription by filter");
+            IAsyncSubscription asyncNewCCI = c.SubscribeAsync("openrmf.compliance.cci", getCCIListing);
+            logger.Info("setting up the openRMF compliance CCI Listing by Control subscription by filter");
+            IAsyncSubscription asyncNewCCIControl = c.SubscribeAsync("openrmf.compliance.cci.control", getCCIListingbyControl);
         }
     }
 }
