@@ -27,6 +27,7 @@ namespace openrmf_msg_compliance
             // Creates a live connection to the default NATS Server running locally
             IConnection c = cf.CreateConnection(Environment.GetEnvironmentVariable("NATSSERVERURL"));
 
+            // get all the CCI items and send back
             EventHandler<MsgHandlerEventArgs> getCCIListing = (sender, natsargs) =>
             {
                 try {

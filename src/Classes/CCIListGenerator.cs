@@ -7,6 +7,12 @@ namespace openrmf_msg_compliance.Classes
 {
     public static class CCIListGenerator 
     {
+      /// <summary>
+      /// Find the list of CCIs based on the cciItems passed in for the control passed in
+      /// </summary>
+      /// <param name="control">The control you are looking to filter on</param>
+      /// <param name="cciItems">The list of CCI items in memory</param>
+      /// <returns>The list of CCIs matching the control passed in</returns>
       public static List<string> GetCCIListing(string control, List<CciItem> cciItems)
       {
         try {

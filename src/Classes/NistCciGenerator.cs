@@ -11,7 +11,11 @@ using System.Xml;
 namespace openrmf_msg_compliance.Classes
 {
     public static class NistCciGenerator
-    {        
+    {
+        /// <summary>
+        /// Generate the list of CCI items from the NIST listing in the XML file included
+        /// </summary>
+        /// <returns>The list of CCI items for use in filtering</returns>
         public static List<CciItem> LoadNistToCci() {
             List<CciItem> cciList = new List<CciItem>();
             CciItem item; // the CCI item
@@ -78,9 +82,13 @@ namespace openrmf_msg_compliance.Classes
             return cciList;
         }
 
+        /// <summary>
         // for the CCI index, pull out the major part of that separately
         // for instance AC-1.2 = AC-1
         //              AU-9 (a) = AU=9
+        /// </summary>
+        /// <param name="cciIndex">The index of the CCI you are looking for</param>
+        /// <returns>The integer showing the NIST control</returns>
         private static int EndOfIndex(string cciIndex){
             int period = cciIndex.IndexOf(".");
             int space = cciIndex.IndexOf(" ");
