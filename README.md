@@ -1,5 +1,5 @@
 # openrmf-msg-controls
-Messaging service to respond to internal API requests to receive a list of controls. This is all using a NATS Request/Repl scenario. This uses 
+Messaging service to respond to internal API requests to receive a list of controls. This is all using a NATS Request/Reply scenario. This uses 
 an XML file to load an internal memory database of sorts to query and receive data from. Update the database = update the 
 XML file and redeploy.
 
