@@ -23,9 +23,38 @@ namespace openrmf_msg_compliance
 
             // Create a new connection factory to create a connection.
             ConnectionFactory cf = new ConnectionFactory();
+            // add the options for the server, reconnecting, and the handler events
+            Options opts = ConnectionFactory.GetDefaultOptions();
+            opts.MaxReconnect = -1;
+            opts.ReconnectWait = 1000;
+            opts.Url = Environment.GetEnvironmentVariable("NATSSERVERURL");
+            opts.AsyncErrorEventHandler += (sender, events) =>
+            {
+                logger.Info("NATS client error. Server: {0}. Message: {1}. Subject: {2}", events.Conn.ConnectedUrl, events.Error, events.Subscription.Subject);
+            };
 
-            // Creates a live connection to the default NATS Server running locally
-            IConnection c = cf.CreateConnection(Environment.GetEnvironmentVariable("NATSSERVERURL"));
+            opts.ServerDiscoveredEventHandler += (sender, events) =>
+            {
+                logger.Info("A new server has joined the cluster: {0}", events.Conn.DiscoveredServers);
+            };
+
+            opts.ClosedEventHandler += (sender, events) =>
+            {
+                logger.Info("Connection Closed: {0}", events.Conn.ConnectedUrl);
+            };
+
+            opts.ReconnectedEventHandler += (sender, events) =>
+            {
+                logger.Info("Connection Reconnected: {0}", events.Conn.ConnectedUrl);
+            };
+
+            opts.DisconnectedEventHandler += (sender, events) =>
+            {
+                logger.Info("Connection Disconnected: {0}", events.Conn.ConnectedUrl);
+            };
+            
+            // Creates a live connection to the NATS Server with the above options
+            IConnection c = cf.CreateConnection(opts);
 
             // get all the CCI items and send back
             EventHandler<MsgHandlerEventArgs> getCCIListing = (sender, natsargs) =>
