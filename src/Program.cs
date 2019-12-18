@@ -27,6 +27,7 @@ namespace openrmf_msg_compliance
             Options opts = ConnectionFactory.GetDefaultOptions();
             opts.MaxReconnect = -1;
             opts.ReconnectWait = 1000;
+            opts.Name = "openrmf-msg-compliance";
             opts.Url = Environment.GetEnvironmentVariable("NATSSERVERURL");
             opts.AsyncErrorEventHandler += (sender, events) =>
             {
