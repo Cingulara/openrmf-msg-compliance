@@ -6,8 +6,8 @@ XML file and redeploy.
 * openrmf.controls
 
 ## Running the NATS docker images
-* docker run --rm --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats
-* this is the default and lets you run a NATS server version 1.4 (as of 8/2019)
+* docker run --rm --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats:2.1.2-linux
+* this is the default and lets you run a NATS server version 2.x (as of 12/2019)
 * just runs in memory and no streaming (that is separate)
 
 ## What is required
