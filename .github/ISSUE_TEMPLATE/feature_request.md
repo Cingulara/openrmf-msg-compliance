@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for the OpenRMF Compliance Message Service
-title: ''
+title: "[FEATURE] "
 labels: enhancement
 assignees: Cingulara
 
