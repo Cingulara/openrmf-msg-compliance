@@ -1,3 +1,5 @@
+![.NET Core Build and Test](https://github.com/Cingulara/openrmf-msg-compliance/workflows/.NET%20Core%20Build%20and%20Test/badge.svg)
+
 # openrmf-msg-controls
 Messaging service to respond to internal API requests to receive a list of controls. This is all using a NATS Request/Reply scenario. This uses 
 an XML file to load an internal memory database of sorts to query and receive data from. Update the database = update the 
