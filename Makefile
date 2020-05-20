@@ -1,4 +1,4 @@
-VERSION ?= 0.13.01
+VERSION ?= 0.14.01
 NAME ?= "openrmf-msg-compliance"
 AUTHOR ?= "Dale Bingham"
 NO_CACHE ?= true
