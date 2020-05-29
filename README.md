@@ -7,6 +7,7 @@ XML file and redeploy.
 
 * openrmf.compliance.cci
 * openrmf.compliance.cci.control
+* openrmf.compliance.cci.references
 
 ## Running the NATS docker images
 * docker run --rm --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats:2.1.2-linux
