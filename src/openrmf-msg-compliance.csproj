@@ -5,13 +5,13 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <RootNamespace>openrmf_msg_compliances</RootNamespace>
     <ProjectGuid>{516d0f13-fd17-4a4a-91bd-c97bf4697101}</ProjectGuid>
-    <Version>0.11</Version>
+    <Version>0.15.01</Version>
     <InformationalVersion>This is a beta of the OpenRMF Tool Messaging API for sending Compliance data via messaging from Cingulara</InformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.6" />
-    <PackageReference Include="NATS.Client" Version="0.9.0" />
+    <PackageReference Include="NATS.Client" Version="0.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="mongodb.driver" Version="2.7.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
