@@ -2,24 +2,24 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>openrmf_msg_compliances</RootNamespace>
     <ProjectGuid>{516d0f13-fd17-4a4a-91bd-c97bf4697101}</ProjectGuid>
-    <Version>1.01.01</Version>
-    <InformationalVersion>This is a beta of the OpenRMF Tool Messaging API for sending Compliance data via messaging from Cingulara</InformationalVersion>
+    <Version>1.02.01</Version>
+    <InformationalVersion>This is the OpenRMF Tool Messaging API for sending Compliance data via messaging from Cingulara</InformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.5" />
     <PackageReference Include="NATS.Client" Version="0.10.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="mongodb.driver" Version="2.7.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
-    <PackageReference Include="NLog" Version="4.5.11" />
-    <PackageReference Include="NLog.Extensions.Logging" Version="1.4.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6">
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="mongodb.driver" Version="2.10.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
+    <PackageReference Include="NLog" Version="4.7.2" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
