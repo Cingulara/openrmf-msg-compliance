@@ -12,8 +12,8 @@ RUN dotnet build
 RUN dotnet publish -c Release -o out
 
 # build runtime image
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1
-RUN apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y install ca-certificates &&  apt-get clean
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1-alpine3.12
+RUN apk update && apk upgrade && apk add ca-certificates && rm -rf /var/cache/apk/*
 
 # Create a group and user
 RUN addgroup --system --gid 1001 openrmfgroup \
