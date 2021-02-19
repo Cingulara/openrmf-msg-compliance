@@ -9,23 +9,21 @@ RUN dotnet restore
 # copy the rest and build
 COPY src/ ./
 RUN dotnet build
-RUN dotnet publish -c Release -o out
+RUN dotnet publish --runtime alpine-x64 -c Release -o out --self-contained true /p:PublishTrimmed=true
 
 # build runtime image
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1-alpine3.12
-RUN apk update && apk upgrade && apk add ca-certificates && rm -rf /var/cache/apk/*
-
-# Create a group and user
-RUN addgroup --system --gid 1001 openrmfgroup \
-&& adduser --system -u 1001 --ingroup openrmfgroup --shell /bin/sh openrmfuser
+FROM cingulara/openrmf-base-api:1.03.00
+RUN apk update && apk upgrade
 
 RUN mkdir /app
 WORKDIR /app
+COPY --from=build-env /app/out .
+COPY ./nlog.config /app/nlog.config
 
-COPY --from=build-env /app/out ./
-COPY src/nlog.config /app/nlog.config
-
-RUN chown openrmfuser:openrmfgroup /app
+# Create a group and user
+RUN addgroup --system --gid 1001 openrmfprogroup \
+&& adduser --system -u 1001 --ingroup openrmfprogroup --shell /bin/sh openrmfprouser
+RUN chown openrmfprouser:openrmfprogroup /app
 
 USER 1001
-ENTRYPOINT ["dotnet", "openrmf-msg-compliance.dll"]
+ENTRYPOINT ["./openrmf-msg-compliance"]
