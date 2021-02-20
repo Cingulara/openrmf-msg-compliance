@@ -15,7 +15,7 @@ XML file and redeploy.
 * just runs in memory and no streaming (that is separate)
 
 ## What is required
-* .NET Core 2.x
+* .NET Core 3.x
 * running `dotnet add package NATS.Client` to add the package
 * dotnet restore to pull in all required libraries
 * The C# NATS client library available at https://github.com/nats-io/csharp-nats
