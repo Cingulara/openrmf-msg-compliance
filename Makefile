@@ -1,4 +1,4 @@
-VERSION ?= 1.07.00
+VERSION ?= 1.08.00
 NAME ?= "openrmf-msg-compliance"
 AUTHOR ?= "Dale Bingham"
 NO_CACHE ?= true
@@ -20,6 +20,8 @@ latest:
 clean:
 	@rm -f -r src/obj
 	@rm -f -r src/bin
+	@rm -f -r tests/obj
+	@rm -f -r tests/bin
 
 version:
 	@echo ${VERSION}
