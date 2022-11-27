@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>openrmf_msg_compliances</RootNamespace>
     <ProjectGuid>{516d0f13-fd17-4a4a-91bd-c97bf4697101}</ProjectGuid>
-    <Version>1.08.01</Version>
+    <Version>1.08.02</Version>
     <InformationalVersion>This is the OpenRMF OSS Application Messaging API for sending Compliance data via messaging from Cingulara</InformationalVersion>
   </PropertyGroup>
 
