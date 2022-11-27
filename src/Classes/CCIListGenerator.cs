@@ -17,7 +17,6 @@ namespace openrmf_msg_compliance.Classes
       /// <returns>The list of CCIs matching the control passed in</returns>
       public static List<string> GetCCIListing(string control, List<CciItem> cciItems)
       {
-        try {
           // find all records where the NIST control is in the CciReference and add the parent CCI
           // return the list of strings
           List<string> cciList = new List<string>();
@@ -28,11 +27,6 @@ namespace openrmf_msg_compliance.Classes
           }
 
           return cciList.Distinct().ToList();
-        }
-        catch (Exception ex) {
-            // log it here
-            throw ex;
-        }
       }
     }
 }
