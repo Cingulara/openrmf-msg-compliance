@@ -12,7 +12,7 @@ RUN dotnet build
 RUN dotnet publish --runtime alpine-x64 -c Release -o out --self-contained true /p:PublishTrimmed=true
 
 # build runtime image
-FROM cingulara/openrmf-base:1.08.02
+FROM cingulara/openrmf-base:1.09.01
 RUN apk update && apk upgrade
 
 RUN mkdir /app
