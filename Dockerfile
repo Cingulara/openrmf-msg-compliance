@@ -12,7 +12,7 @@ RUN dotnet build
 RUN dotnet publish --runtime linux-musl-x64 -c Release -o out --self-contained true
 
 # build runtime image
-FROM cingulara/openrmf-base:1.13.01
+FROM docker.io/cingulara/openrmf-base:1.14.01
 RUN apk update && apk upgrade
 
 RUN mkdir /app
@@ -28,5 +28,8 @@ RUN chown openrmfuser:openrmfgroup /app
 USER 1001
 ENTRYPOINT ["./openrmf-msg-compliance"]
 
-LABEL org.opencontainers.image.source https://github.com/Cingulara/openrmf-msg-compliance
-LABEL maintainer="dale.bingham@cingulara.com"
+LABEL org.opencontainers.image.source=https://github.com/Cingulara/openrmf-msg-compliance
+LABEL org.opencontainers.image.authors="dale.bingham@cingulara.com"
+LABEL org.opencontainers.image.description="This is the complaince CCI message client to capture pub/sub messages and react accordingly for OpenRMF OSS"
+LABEL org.opencontainers.image.vendor="Cingulara LLC and Tutela LLC"
+LABEL org.opencontainers.image.title="OpenRMF OSS Compliance Message Client"
