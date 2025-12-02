@@ -2,8 +2,8 @@
 <cci_list
 	xmlns="http://iase.disa.mil/cci">
 	<metadata>
-		<version>2024-11-19</version>
-		<publishdate>2024-11-19</publishdate>
+		<version>2025-09-19</version>
+		<publishdate>2025-09-19</publishdate>
 	</metadata>
 	<cci_items>
 		<cci_item id="CCI-000001">
@@ -29286,7 +29286,8 @@
 			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 4" version="4" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SC-37" />
-				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SC-37, SC-37 (1)" />
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SC-37 (1)" />
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SC-37" />
 			</references>
 		</cci_item>
 		<cci_item id="CCI-002524">
@@ -30380,7 +30381,7 @@
 			<publishdate>2013-07-11</publishdate>
 			<contributor>DISA FSO</contributor>
 			<definition>Configure malicious code protection mechanisms to perform real-time scans of files from external sources at endpoint; and/or network entry and exit points as the files are downloaded, opened, or executed in accordance with organizational policy.</definition>
-			<type>policy</type>
+			<type>technical</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 4" version="4" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SI-3 c 1" />
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SI-3 c 1" />
@@ -31583,7 +31584,6 @@
 			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 4" version="4" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SI-7 (13)" />
-				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SI-7 (13)" />
 			</references>
 		</cci_item>
 		<cci_item id="CCI-002735">
@@ -41365,7 +41365,7 @@
 			<publishdate>2022-03-01</publishdate>
 			<contributor>DISA</contributor>
 			<definition>Defines the information flow control mechanisms to prevent the bypassing of encrypted information.</definition>
-			<type>technical</type>
+			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="AC-4 (4)" />
 			</references>
@@ -53600,7 +53600,7 @@
 			<publishdate>2022-03-07</publishdate>
 			<contributor>DISA</contributor>
 			<definition>Conduct exfiltration tests at an organization-defined frequency.</definition>
-			<type>technical</type>
+			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SC-7 (10) (b)" />
 			</references>
@@ -53610,7 +53610,7 @@
 			<publishdate>2022-03-07</publishdate>
 			<contributor>DISA</contributor>
 			<definition>Defines the frequency to conduct exfiltration tests.</definition>
-			<type>technical</type>
+			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SC-7 (10) (b)" />
 			</references>
@@ -56077,7 +56077,7 @@
 			<status>draft</status>
 			<publishdate>2022-03-07</publishdate>
 			<contributor>DISA</contributor>
-			<definition>Access the system, system component, or system service prior to selection, acceptance, modification, or update.</definition>
+			<definition>Assess the system, system component, or system service prior to selection, acceptance, modification, or update.</definition>
 			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SR-5 (2)" />
@@ -56087,7 +56087,7 @@
 			<status>draft</status>
 			<publishdate>2022-03-07</publishdate>
 			<contributor>DISA</contributor>
-			<definition>Access and review the supply chain-related risks associated with suppliers or contractors and the system, system component, or system service they provide on an organization-defined frequency.</definition>
+			<definition>Assess and review the supply chain-related risks associated with suppliers or contractors and the system, system component, or system service they provide on an organization-defined frequency.</definition>
 			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="SR-6" />
@@ -56441,6 +56441,156 @@
 			<type>policy</type>
 			<references>
 				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IR-7 (1)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005155">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Employ identity providers and authorization servers to manage user, device, and non-person entity (NPE) identities, attributes, and access rights supporting authentication and authorization decisions in accordance with organization-defined identification and authentication policy using organization-defined mechanisms.</definition>
+			<type>policy</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005156">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Cryptographic keys that protect access tokens are generated, managed, and protected from disclosure and misuse.</definition>
+			<type>policy</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (01)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005157">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>The private keys used to sign assertions and tokens are protected commensurate with the impact of the system and information resources that can be accessed.</definition>
+			<type>policy</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (02)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005158">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Assertions are generated in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (a)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005159">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Assertions are issued in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (b)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005160">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Assertions are refreshed in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (c)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005161">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Assertions are revoked in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (d)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005162">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Assertions are time-restricted in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (e)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005163">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Assertions are audience-restricted in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (f)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005164">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Access tokens are generated in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (a)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005165">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Access tokens are issued in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (b)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005166">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Access tokens are refreshed in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (c)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005167">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Access tokens are revoked in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (d)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005168">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Access tokens are time-restricted in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (e)" />
+			</references>
+		</cci_item>
+		<cci_item id="CCI-005169">
+			<status>draft</status>
+			<publishdate>2025-01-23</publishdate>
+			<contributor>DISA</contributor>
+			<definition>Access tokens are audience-restricted in accordance with organization-defined identification and authentication policy.</definition>
+			<type>technical</type>
+			<references>
+				<reference creator="NIST" title="NIST SP 800-53 Revision 5" version="5" location="http://csrc.nist.gov/publications/PubsSPs.html" index="IA-13 (03) (f)" />
 			</references>
 		</cci_item>
 	</cci_items>
